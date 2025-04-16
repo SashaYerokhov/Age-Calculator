@@ -1,0 +1,245 @@
+:root {
+  --purple-500: hsl(259, 100%, 65%);
+  --red-400: hsl(0, 100%, 67%);
+  --white: hsl(0, 100%, 100%);
+  --grey-100: hsl(0, 0%, 94%);
+  --grey-200: hsl(0, 0%, 86%);
+  --grey-500: hsl(0, 1%, 44%);
+  --black: hsl(0, 0%, 0%);
+}
+
+@font-face {
+  font-family: "Poppins-Regular";
+  src: local("Poppins-Regular"), url(../assets/fonts/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "Poppins-Italic";
+  src: local("Poppins-Italic"), url(../assets/fonts/Poppins-Italic.ttf);
+}
+@font-face {
+  font-family: "Poppins-BoldItalic";
+  src: local("Poppins-BoldItalic"), url(../assets/fonts/Poppins-BoldItalic.ttf);
+}
+@font-face {
+  font-family: "Poppins-ExtraBoldItalic";
+  src: local("Poppins-ExtraBoldItalic"),
+    url(../assets/fonts/Poppins-ExtraBoldItalic.ttf);
+}
+@font-face {
+  font-family: "Poppins-Bold";
+  src: local("Poppins-Bold"), url(../assets/fonts/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: "Poppins-ExtraBold";
+  src: local("Poppins-ExtraBold"), url(../assets/fonts/Poppins-ExtraBold.ttf);
+}
+
+body {
+  max-width: 1460px;
+  padding-inline: 10px;
+  width: 100%;
+  min-height: 960px;
+  background-color: var(--grey-200);
+  font-family: "Poppins-Regular";
+}
+
+.age__calculator {
+  max-width: 840px;
+  width: 100%;
+  min-height: 700px;
+  margin: 150px auto;
+  padding: 60px 55px;
+  border-radius: 15px;
+  border-bottom-right-radius: 150px;
+  background-color: var(--white);
+}
+
+.form {
+  position: relative;
+}
+
+.form-data {
+  display: flex;
+  align-items: center;
+  column-gap: 35px;
+  padding-block-end: 50px;
+  border-bottom: 1px solid var(--grey-200);
+}
+
+.form-input {
+  /* высота задана, чтобы при ошибке инпуты не скакали */
+  height: 135px;
+}  
+
+.form label {
+  display: block;
+  font-family: "Poppins-Bold";
+  text-transform: uppercase;
+  margin-block-end: 15px;
+}
+
+.form input {
+  max-width: 160px;
+  height: 70px;
+  font-family: "Poppins-Bold";
+  font-size: 26px;
+  border-radius: 10px;
+  border-color: var(--grey-100);
+  padding-inline-start: 25px;
+  cursor: pointer;
+}
+
+.form input::placeholder {
+  font-family: "Poppins-Bold";
+  font-size: 26px;
+}
+
+.form input:hover {
+  border-color: var(--purple-500);
+}
+
+.form input:active {
+  outline: 2px solid var(--purple-500);
+}
+
+.form input:focus-visible {
+  outline: 1px dotted var(--black);
+  outline-offset: 2px;
+}
+.form-input .error {
+  color: var(--red-400);
+  font-size: 15px;
+  margin-block-end: 5px;
+}
+
+.form-input.success input {
+  border-color: var(--grey-100);
+}
+
+.form-input.error label {
+  color: var(--red-400);
+}
+
+.form-input.error input {
+  border-color: var(--red-400);
+}
+
+.btn {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--purple-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  top: 70%;
+  cursor: pointer;
+  transition: background-color 0.4s ease-in-out, scale 0.4s ease-in;
+}
+
+.btn:hover {
+  background-color: var(--black);
+}
+
+.btn:active {
+  scale: 95%;
+}
+
+.age__result {
+  font-family: "Poppins-BoldItalic";
+  padding-block-start: 80px;
+  font-size: 60px;
+}
+
+.age__result span {
+  padding-inline-end: 8px;
+  color: var(--purple-500);
+  font-size: 80px;
+}
+
+/*  убрать стрелки в поле input[type=»number»] с помощью CSS: */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* для того чтобы, после ввода данных
+в инпуте цвет плейсхолдера - был белый */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 40rem var(--white) inset;
+}
+
+/* Сделать мобильную версию и оставить так как есть
+и описать ошибку, что не смог сделать валидацию дня и месяца 
+чтобы совпадали например 30 ноября, а не 31 ноября
+*/
+
+@media (max-width: 900px) {
+  body {
+    min-height: 485px;
+    padding-inline: 15px;
+  }
+
+  .age__calculator {
+    margin-block: 88px;
+    padding: 50px 35px;
+  }
+
+  .form-data {
+    gap: 17px;
+  }
+
+  .form-input {
+    height: 150px;
+  }
+
+  .form label {
+    margin-block-end: 10px;
+  }
+
+  .form input {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .form input::placeholder {
+    font-size: 15px;
+  }
+
+  .form-input .error {
+    font-size: 11px;
+  }
+
+  .btn {
+    right: 35%;
+  }
+
+  .age__result {
+    padding-block-start: 70px;
+    font-size: 30px;
+  }
+
+  .age__result span {
+    font-size: 45px;
+  }
+}
+
+.attribution {
+  font-family: "Poppins-Italic";
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
