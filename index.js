@@ -16,7 +16,6 @@ let dayToday = today.getDate();
 let monthToday = today.getMonth() + 1;
 let yearToday = today.getFullYear();
 
-  // Проверка високосного года
   function isLeapYear(yearInput) {
     return (yearInput % 4 === 0 && yearInput % 100 !== 0) || yearInput % 400 === 0;
   }
@@ -112,44 +111,6 @@ function handleSubmit(event) {
     yearAge.innerHTML = y;
   }
 }
-
-/**
- * the way we calculat age:
- * days: current day - birth day
- * 10 - 7 = 3
- * month: current month - birth month
- * 5 - 3 = 2
- * year: current year - birth year
- * 2023-2000 = 23
- * 10.5.2023 - 7.3.2000 = 3.2.23
- * Все это относится к этому
- *  const d = dayToday - dayInput.value;
-    const m = monthToday - monthInput.value;
-    const y = yearToday - yearInput.value;
- * 
-Проверки для двух случаев:
-1. День рождения больше текущего дня
-2. Месяц рождения больше текущего месяца 3:46
- * 
-10 - 15 = -5 сегодняшний день меньше дня рождения
-5 - 3 = 2 тогда месяц будет вычисляться так (5-1) - 3 = 1
-      dayToday = dayToday + monthDays[monthToday - 1];
-      monthToday = monthToday - 1;
-      Если день рождения больше чем сегодняшний день
-1-текущий день + количество дней в текущем месяце Количество дней в массивах текущих месяцев, которые мы создали. 
-2 - уменьшить текущий месяц на 1
-
-Если сегодняшний месяц меньше месяца дня рождения
-5 - 7 = -2
-      monthToday = monthToday + 12;
-      yearToday = yearToday - 1;
-      (12 + 5) - 7 = 10
-      (2023 - 1) - 2000 = 22
-
-      Если месяц рождения больше чем сегодняшний месяц
-1 - добавить 12 к текущему месяцу 
-2 - уменьшить текущий год на 1
- */
 
 form.addEventListener('submit', handleSubmit)
 
