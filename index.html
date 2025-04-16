@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Age calculator app</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <section class="age__calculator">
+      <form action="#" class="form" id="form">
+        <div class="form-data">
+          <div class="form-input">
+            <label for="dayInput">Day</label>
+            <input
+              type="number"
+              name="dayInput"
+              id="dayInput"
+              placeholder="DD"
+            />
+            <div class="error"></div>
+          </div>
+          <div class="form-input">
+            <label for="monthInput">Month</label>
+            <input
+              type="number"
+              name="monthInput"
+              id="monthInput"
+              placeholder="MM"
+            />
+            <div class="error"></div>
+          </div>
+          <div class="form-input">
+            <label for="yearInput">Year</label>
+            <input
+              type="number"
+              name="yearInput"
+              id="yearInput"
+              placeholder="YYYY"
+              max="2025"
+            />
+            <div class="error"></div>
+          </div>
+        </div>
+        <button type="submit" class="btn">
+          <img src="./assets/images/icon-arrow.svg" alt="icon arrow" />
+        </button>
+      </form>
+      <div class="age__result">
+        <p class="age__result-year"><span class="year-age">--</span>years</p>
+        <p class="age__result-month"><span class="month-age">--</span>months</p>
+        <p class="age__result-days"><span class="day-age">--</span>days</p>
+      </div>
+    </section>
+    <!-- 
+  Также можно прописать в инпуте месяц день мин 1 мак 31
+  Можно прописать в инпуте месяц в мин 1 мак 12
+  можно также прописать регулярное выражение для дня и для месяца
+  -->
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Sasha Yerokhov</a>.
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
