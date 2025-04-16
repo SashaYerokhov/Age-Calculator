@@ -67,7 +67,6 @@ body {
 }
 
 .form-input {
-  /* высота задана, чтобы при ошибке инпуты не скакали */
   height: 135px;
 }  
 
@@ -160,30 +159,21 @@ body {
   font-size: 80px;
 }
 
-/*  убрать стрелки в поле input[type=»number»] с помощью CSS: */
-/* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-/* Firefox */
+
 input[type="number"] {
   -moz-appearance: textfield;
 }
 
-/* для того чтобы, после ввода данных
-в инпуте цвет плейсхолдера - был белый */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 40rem var(--white) inset;
 }
-
-/* Сделать мобильную версию и оставить так как есть
-и описать ошибку, что не смог сделать валидацию дня и месяца 
-чтобы совпадали например 30 ноября, а не 31 ноября
-*/
 
 @media (max-width: 900px) {
   body {
